@@ -1,0 +1,28 @@
+# This is an example configuration file for an etcd cluster with 3 nodes
+
+#specify the name of an etcd member
+ETCD_NAME=p1
+
+# Configure the data directory
+ETCD_DATA_DIR="/var/lib/etcd/p1"
+
+# Configure the listen URLs
+ETCD_LISTEN_PEER_URLS="http://192.168.110.131:2380,http://192.168.110.132:2380,http://192.168.110.133:2380"
+ETCD_LISTEN_CLIENT_URLS="http://192.168.110.131:2379"
+
+# Configure the advertise URLs
+ETCD_INITIAL_ADVERTISE_PEER_URLS="http://192.168.110.131:2380"
+ETCD_ADVERTISE_CLIENT_URLS="http://192.168.110.131:2379"
+
+# Configure the initial cluster
+ETCD_INITIAL_CLUSTER="p1=http://192.168.110.131:2380,p2=http://192.168.110.132:2380,p3=http://192.168.110.133:2380"
+
+# Configure the initial cluster state
+ETCD_INITIAL_CLUSTER_STATE="new"
+
+# Configure the initial cluster token
+ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
+
+# Configure v2 API
+ETCD_ENABLE_V2="true"
+
